@@ -1,9 +1,31 @@
 # CLOUD
-This repository contains the implementation for our work "The Continuous Latent Ornstein-Uhlenbeck Dynamics Framework: A Scalable Latent Process Model for Multivariate Longitudinal Categorical Data". It contains both the proposed CLOUD modem and the baseline methods mentioned in the manuscript. 
 
-The implementations is structured by different simulation settings in the manuscript. For the details, please refer to our paper through the reference below.
+This repository contains the source code and implementation for our work, *"The Continuous Latent Ornstein-Uhlenbeck Dynamics Framework: A Scalable Latent Process Model for Multivariate Longitudinal Categorical Data."*
 
+It provides a robust statistical framework designed for high-dimensional longitudinal data modeling, focusing primarily on continuous-time latent process models, dynamic factor analysis, and item response theory. This repository includes both the proposed CLOUD model and the baseline methods discussed in the manuscript.
 
+## Repository Structure
+
+The implementation is organized according to the different simulation settings detailed in the manuscript. The codebase is structured into distinct simulation modules within the `src` directory:
+
+*   **`src/models_simu_2d/`**: Contains models for 2-dimensional simulations.
+*   **`src/models_simu_4d/`**: Contains models for 4-dimensional simulations, utilizing non-centered parameterizations (NCP) for model fitting.
+    *   `model_ncp_diag_fdt_4d.stan`
+    *   `model_ncp_fix_fdt_4d.stan`
+    *   `model_ncp_full_fdt_4d.stan`
+*   **`src/models_simu_lou/`**: Contains additional algebraic and simulation models (e.g., `model_algebra_cp_fix_2d.stan`).
+
+## Technologies & Workflow
+
+*   **Stan**: Used extensively for model estimation, evaluation, and compiling the statistical frameworks.
+*   **Python**: Utilized alongside Stan for running parallel simulations and generating data visualizations.
+*   **HPC / Slurm**: The models are designed for scalability, capable of utilizing Slurm batch scripts and array configurations to manage background simulation chunks across multiple nodes on high-performance computing clusters.
+
+## Citation
+
+For more details, please refer to our paper. If you use this code in your research, please cite our manuscript:
+
+```bibtex
 @misc{wu2026continuouslatentornsteinuhlenbeckdynamics,
       title={The Continuous Latent Ornstein-Uhlenbeck Dynamics Framework: A Scalable Latent Process Model for Multivariate Longitudinal Categorical Data}, 
       author={Zhennan Wu and Yijie Wang and Xiaoqing Huang},
@@ -11,5 +33,5 @@ The implementations is structured by different simulation settings in the manusc
       eprint={2607.27520},
       archivePrefix={arXiv},
       primaryClass={stat.ME},
-      url={https://arxiv.org/abs/2607.27520}, 
+      url={[https://arxiv.org/abs/2607.27520](https://arxiv.org/abs/2607.27520)}, 
 }
