@@ -9,11 +9,13 @@ It provides a robust statistical framework designed for high-dimensional longitu
 The implementation is organized according to the different simulation settings detailed in the manuscript. The codebase is structured into distinct simulation modules within the `src` directory:
 
 *   **`src/models_simu_2d/`**: Contains models for 2-dimensional simulations.
+    *   `model_ncp_diag_fdt_2d.stan`: DiagOU baseline model in 2D latent space.
+    *   `model_ncp_full_fdt_2d.stan`: CLOUD model in 2D latent space.
 *   **`src/models_simu_4d/`**: Contains models for 4-dimensional simulations, utilizing non-centered parameterizations (NCP) for model fitting.
-    *   `model_ncp_diag_fdt_4d.stan`
-    *   `model_ncp_fix_fdt_4d.stan`
-    *   `model_ncp_full_fdt_4d.stan`
-*   **`src/models_simu_lou/`**: Contains additional algebraic and simulation models (e.g., `model_algebra_cp_fix_2d.stan`).
+    *   `model_ncp_diag_fdt_4d.stan`: DiagOU baseline model in 4D latent space.
+    *   `model_ncp_fix_fdt_4d.stan`: StationaryOU baseline model in 4D latent space.
+    *   `model_ncp_full_fdt_4d.stan`: CLOUD model in 4D latent space.
+*   **`src/models_simu_lou/`**: Contains LOU baseline simulation model.
 
 ## Technologies & Workflow
 
